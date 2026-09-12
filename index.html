@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Animation, personal artwork, storyboards and animatics." />
+    <meta name="theme-color" content="#191919" />
+    <meta property="og:title" content="Kéz — Animator & Visual Storyteller" />
+    <meta property="og:description" content="Animation, personal artwork, storyboards and animatics." />
+    <meta property="og:type" content="website" />
+    <title>Kéz — Animator & Visual Storyteller</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23465242'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,ital,wght@6..96,400;6..96,400&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20260912-22" />
+    <script src="script.js?v=20260912-22" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#about" aria-label="Go to contacts">Kéz<span>.</span></a>
+      <nav class="desktop-nav" aria-label="Portfolio sections">
+        <a href="#insomnia">Insomnia</a>
+        <a href="#personal" hidden>Personal Artwork</a>
+        <a href="#storyboards">Storyboards / Animatics</a>
+      </nav>
+      <a class="contact-link" href="mailto:martasorokina.artwork@gmail.com">Let’s talk ↗</a>
+      <button class="menu-toggle" type="button" aria-controls="mobile-nav" aria-expanded="false">Menu</button>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile portfolio sections" hidden>
+      <a href="#insomnia">Insomnia</a>
+      <a href="#personal" hidden>Personal Artwork</a>
+      <a href="#storyboards">Storyboards / Animatics</a>
+      <a href="#about">About / Contact</a>
+    </nav>
+
+    <main id="main">
+      <section class="intro" id="top">
+        <p class="eyebrow">Animator · Visual storyteller</p>
+        <h1>I draw what<br />keeps me <em>awake.</em></h1>
+        <p class="intro-copy">A growing collection of animation, drawings and stories in motion.</p>
+        <a class="scroll-cue" href="#insomnia">Selected work <span>↓</span></a>
+      </section>
+
+      <section class="work-section light-section" id="insomnia">
+        <div class="section-heading">
+          <p>01 / Featured project</p>
+          <h2>INSOMNIA</h2>
+          <p class="section-note">A personal animated world built after dark.</p>
+        </div>
+
+        <div class="insomnia-content gallery-loading" data-gallery="insomnia" aria-live="polite">
+          <p>Loading works…</p>
+        </div>
+      </section>
+
+      <section class="work-section personal-section" id="personal" hidden>
+        <div class="section-heading compact-heading">
+          <p>02 / Sketchbook</p>
+          <h2>Personal<br /><i>Artwork</i></h2>
+          <p class="section-note">Drawings, characters and small visual experiments.</p>
+        </div>
+
+        <div class="artwork-grid gallery-loading" data-gallery="personal" aria-live="polite">
+          <p>Loading works…</p>
+        </div>
+      </section>
+
+      <section class="work-section storyboard-section" id="storyboards">
+        <div class="section-heading storyboard-heading">
+          <p>03 / Sequential work</p>
+          <h2>Storyboards<br /><i>& Animatics</i></h2>
+          <p class="section-note">Boards, timing and visual development from idea to scene.</p>
+        </div>
+
+        <div class="reel-list gallery-loading" data-gallery="storyboards" aria-live="polite">
+          <p>Loading works…</p>
+        </div>
+      </section>
+
+      <section class="about-section" id="about">
+        <p class="eyebrow">About / Contact</p>
+        <div class="about-grid">
+          <h2>Small artist.<br /><i>Big worlds.</i></h2>
+          <div class="about-copy">
+            <p>Hi! My name is Marta Sorokina, you can also find my artwork by name Kéz (Kez_Soro). I am a small artist with big dreams!</p>
+            <p>I love exploring ideas and styles. Available for small projects.</p>
+            <a class="email-link" href="mailto:martasorokina.artwork@gmail.com">martasorokina.artwork@gmail.com ↗</a>
+            <div class="social-links" aria-label="Social links">
+              <a href="https://x.com/Kez_Soro" target="_blank" rel="noreferrer">Twitter ↗</a>
+              <a href="https://www.tumblr.com/blog/keziasoro" target="_blank" rel="noreferrer">Tumblr ↗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer><p>© <span id="year">2026</span> Kéz</p><a href="#top">Back to top ↑</a></footer>
+  </body>
+</html>

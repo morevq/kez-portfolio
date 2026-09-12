@@ -1,0 +1,148 @@
+{
+  "insomnia": [
+    {
+      "src": "works/insomnia/01-film.mp4",
+      "title": "Film",
+      "type": "video",
+      "label": "Animation",
+      "number": "01"
+    },
+    {
+      "src": "works/insomnia/02-background-01.png",
+      "title": "Background 01",
+      "type": "image",
+      "label": "Artwork",
+      "number": "02"
+    },
+    {
+      "src": "works/insomnia/03-background-02.png",
+      "title": "Background 02",
+      "type": "image",
+      "label": "Artwork",
+      "number": "03"
+    },
+    {
+      "src": "works/insomnia/04-background-03.png",
+      "title": "Background 03",
+      "type": "image",
+      "label": "Artwork",
+      "number": "04"
+    },
+    {
+      "src": "works/insomnia/05-background-04.png",
+      "title": "Background 04",
+      "type": "image",
+      "label": "Artwork",
+      "number": "05"
+    },
+    {
+      "src": "works/insomnia/06-background-05.png",
+      "title": "Background 05",
+      "type": "image",
+      "label": "Artwork",
+      "number": "06"
+    },
+    {
+      "src": "works/insomnia/07-postcard.png",
+      "title": "Postcard",
+      "type": "image",
+      "label": "Artwork",
+      "number": "07"
+    }
+  ],
+  "personal": [
+    {
+      "src": "works/personal/01.png",
+      "title": "Artwork 01",
+      "type": "image",
+      "label": "Personal artwork",
+      "number": "01"
+    },
+    {
+      "src": "works/personal/02.png",
+      "title": "Artwork 02",
+      "type": "image",
+      "label": "Personal artwork",
+      "number": "02"
+    },
+    {
+      "src": "works/personal/03.png",
+      "title": "Artwork 03",
+      "type": "image",
+      "label": "Personal artwork",
+      "number": "03"
+    },
+    {
+      "src": "works/personal/04.png",
+      "title": "Artwork 04",
+      "type": "image",
+      "label": "Personal artwork",
+      "number": "04"
+    },
+    {
+      "src": "works/personal/05.png",
+      "title": "Artwork 05",
+      "type": "image",
+      "label": "Personal artwork",
+      "number": "05"
+    },
+    {
+      "src": "works/personal/06.png",
+      "title": "Artwork 06",
+      "type": "image",
+      "label": "Personal artwork",
+      "number": "06"
+    },
+    {
+      "src": "works/personal/07.jpeg",
+      "title": "Artwork 07",
+      "type": "image",
+      "label": "Personal artwork",
+      "number": "07"
+    }
+  ],
+  "storyboards": [
+    {
+      "src": "works/storyboards/01-animatic-01.mp4",
+      "title": "Animatic 01",
+      "type": "video",
+      "label": "Animatic",
+      "number": "01"
+    },
+    {
+      "src": "works/storyboards/02-animatic-02.mp4",
+      "title": "Animatic 02",
+      "type": "video",
+      "label": "Animatic",
+      "number": "02"
+    },
+    {
+      "src": "works/storyboards/03-animatic-03.mp4",
+      "title": "Animatic 03",
+      "type": "video",
+      "label": "Animatic",
+      "number": "03"
+    },
+    {
+      "src": "works/storyboards/04-sequence-01.png",
+      "title": "Sequence 01",
+      "type": "image",
+      "label": "Storyboard",
+      "number": "04"
+    },
+    {
+      "src": "works/storyboards/05-sequence-02.png",
+      "title": "Sequence 02",
+      "type": "image",
+      "label": "Storyboard",
+      "number": "05"
+    },
+    {
+      "src": "works/storyboards/06-sequence-03.png",
+      "title": "Sequence 03",
+      "type": "image",
+      "label": "Storyboard",
+      "number": "06"
+    }
+  ]
+}
