@@ -56,9 +56,6 @@ function createMedia(item, { loopingPreview = false } = {}) {
     if (loopingPreview) makeLoopingPreview(video);
     video.src = item.src;
     video.setAttribute('aria-label', item.title);
-    video.addEventListener('loadeddata', () => {
-      video.parentElement?.classList.add('video-ready');
-    }, { once: true });
     return video;
   }
 
