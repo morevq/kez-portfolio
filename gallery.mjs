@@ -1,4 +1,4 @@
-import { readdir } from 'node:fs/promises';
+import { readdir, stat } from 'node:fs/promises';
 import { dirname, extname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -46,17 +46,20 @@ async function scanCategory(category, config) {
     .filter((entry) => entry.type)
     .sort((left, right) => left.name.localeCompare(right.name, undefined, { numeric: true }));
 
-  return files.map((file, index) => {
+  return Promise.all(files.map(async (file, index) => {
     const position = index + 1;
     const leadingNumber = file.name.match(/^\d+/)?.[0];
+    const filePath = join(directory, file.name);
+    const fileVersion = Math.trunc((await stat(filePath)).mtimeMs);
+    const relativePath = `works/${config.folder}/${encodeURIComponent(file.name)}`;
     return {
-      src: `works/${config.folder}/${encodeURIComponent(file.name)}`,
+      src: `${relativePath}?v=${fileVersion}`,
       title: getTitle(file.name, category, position),
       type: file.type,
       label: config.labels[file.type],
       number: String(leadingNumber ?? position).padStart(2, '0'),
     };
-  });
+  }));
 }
 
 export async function scanGalleries() {

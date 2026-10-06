@@ -162,7 +162,8 @@ function renderInsomnia(items) {
   const target = galleryTargets.insomnia;
   const videos = items.filter((item) => item.type === 'video');
   const stills = items.filter((item) => item.type === 'image');
-  const backgrounds = stills.filter((item) => !/postcard/i.test(item.title));
+  const backgrounds = stills.filter((item) => !/postcard|poster/i.test(item.title));
+  const posters = stills.filter((item) => /poster/i.test(item.title));
   const postcards = stills.filter((item) => /postcard/i.test(item.title));
   target.replaceChildren();
 
@@ -220,6 +221,27 @@ function renderInsomnia(items) {
     target.append(stillGroup);
   }
 
+  if (posters.length || postcards.length) {
+    const extrasGroup = document.createElement('div');
+    extrasGroup.className = 'insomnia-extras-group';
+
+  if (posters.length) {
+    const posterGroup = document.createElement('div');
+    posterGroup.className = 'insomnia-poster-group';
+    posterGroup.append(createGroupHeading('Poster', posters.length, false));
+
+    posters.forEach((item) => {
+      const figure = document.createElement('figure');
+      figure.className = 'insomnia-still poster';
+      const media = document.createElement('div');
+      media.className = 'media gallery-media';
+      media.append(createMedia(item));
+      figure.append(media);
+      posterGroup.append(figure);
+    });
+    extrasGroup.append(posterGroup);
+  }
+
   if (postcards.length) {
     const postcardGroup = document.createElement('div');
     postcardGroup.className = 'insomnia-postcard-group';
@@ -238,7 +260,10 @@ function renderInsomnia(items) {
       figure.append(media, caption);
       postcardGroup.append(figure);
     });
-    target.append(postcardGroup);
+    extrasGroup.append(postcardGroup);
+  }
+
+    target.append(extrasGroup);
   }
 }
 
@@ -310,19 +335,31 @@ function renderStoryboards(items) {
   }
 
   if (sequence.length) {
+    const sequenceGroups = new Map();
+    sequence.forEach((item) => {
+      const prefix = item.title.replace(/\s+\d+$/u, '').trim() || 'Sequence';
+      if (!sequenceGroups.has(prefix)) sequenceGroups.set(prefix, []);
+      sequenceGroups.get(prefix).push(item);
+    });
+
     const sequenceGroup = document.createElement('div');
     sequenceGroup.className = 'storyboard-sequence-group';
     sequenceGroup.append(createGroupHeading('Storyboard sequence', sequence.length, false));
 
-    const strip = document.createElement('div');
-    strip.className = 'storyboard-sequence';
-    sequence.forEach((item) => {
-      const figure = document.createElement('figure');
-      const image = createMedia(item);
-      figure.append(image);
-      strip.append(figure);
+    sequenceGroups.forEach((groupItems) => {
+      const series = document.createElement('div');
+      series.className = 'storyboard-sequence-series';
+      const strip = document.createElement('div');
+      strip.className = 'storyboard-sequence';
+      groupItems.forEach((item) => {
+        const figure = document.createElement('figure');
+        const image = createMedia(item);
+        figure.append(image);
+        strip.append(figure);
+      });
+      series.append(strip);
+      sequenceGroup.append(series);
     });
-    sequenceGroup.append(strip);
     target.append(sequenceGroup);
   }
 

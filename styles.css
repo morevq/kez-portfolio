@@ -121,7 +121,7 @@ button { color: inherit; font: inherit; }
 .insomnia-content .gallery-group-heading p,
 .insomnia-video .work-meta,
 .insomnia-still:not(.postcard) figcaption { display: none; }
-.insomnia-video-group + .insomnia-still-group { margin-top: 96px; }
+.insomnia-content > div + div { margin-top: 96px; }
 .insomnia-video { width: min(100%, 1120px); margin-inline: auto; }
 .insomnia-video .gallery-media { aspect-ratio: 16 / 9; background: var(--night); }
 .insomnia-video .gallery-media video,
@@ -164,13 +164,18 @@ button { color: inherit; font: inherit; }
 .insomnia-still.panorama { grid-column: auto; }
 .insomnia-still.portrait { grid-column: 3; grid-row: 1 / span 2; }
 .insomnia-still.portrait img { object-fit: contain; }
-.insomnia-still.postcard { grid-column: 1 / -1; grid-row: auto; display: block; width: min(100%, 960px); margin-inline: auto; justify-self: center; }
+.insomnia-still.poster { display: block; width: min(100%, 560px); margin-inline: auto; }
+.insomnia-still.poster .gallery-media { height: auto; }
+.insomnia-still.poster img { height: auto; object-fit: contain; }
+.insomnia-extras-group { display: grid; grid-template-columns: minmax(0, 1.28fr) minmax(0, .72fr); gap: 32px; width: min(100%, 1120px); margin-inline: auto; align-items: start; }
+.insomnia-postcard-group { order: 1; }
+.insomnia-poster-group { order: 2; }
+.insomnia-still.postcard { grid-column: 1 / -1; grid-row: auto; display: block; width: 100%; margin-inline: auto; justify-self: center; }
 .insomnia-still.postcard .gallery-media { height: auto; }
 .insomnia-still.postcard img { height: auto; object-fit: contain; }
 .insomnia-still.postcard .postcard-award { padding-top: 14px; }
 .insomnia-still figcaption { padding-top: 10px; font-family: var(--display); font-size: 18px; }
 .insomnia-still figcaption.award-caption { font-family: inherit; }
-.insomnia-still-group + .insomnia-postcard-group { margin-top: 96px; }
 .artwork-card .gallery-media img { height: auto; }
 .artwork-card .gallery-media video { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .reel-frame.gallery-media img,
@@ -245,6 +250,7 @@ button { color: inherit; font: inherit; }
 .storyboard-heading h2 { font-size: clamp(65px, 9vw, 132px); }
 .reel-list { border-top: 0; }
 .storyboard-video-group + .storyboard-sequence-group { margin-top: 110px; }
+.storyboard-sequence-series + .storyboard-sequence-series { margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(224, 220, 209, .28); }
 .storyboard-videos { border-top: 1px solid var(--line); }
 .reel-item { display: grid; grid-template-columns: 70px minmax(300px, 1.4fr) 1fr; gap: 30px; align-items: center; padding: 32px 0; border-bottom: 1px solid var(--line); }
 .reel-number { align-self: start; color: var(--muted); font-size: 12px; }
@@ -296,9 +302,11 @@ footer { display: flex; justify-content: space-between; padding: 24px 3vw; backg
   .work-card.featured { grid-row: auto; }
   .placeholder-media, .placeholder-media img, .art-placeholder,
   .insomnia-grid .featured .gallery-media { min-height: min(76vw, 520px); }
-  .insomnia-video-group + .insomnia-still-group { margin-top: 72px; }
+  .insomnia-content > div + div { margin-top: 72px; }
+  .insomnia-extras-group { gap: 20px; }
   .insomnia-stills { grid-template-rows: repeat(2, clamp(150px, 22vw, 210px)) auto; grid-auto-rows: auto; gap: 12px; }
   .storyboard-video-group + .storyboard-sequence-group { margin-top: 78px; }
+  .storyboard-sequence-series + .storyboard-sequence-series { margin-top: 28px; padding-top: 28px; }
   .storyboard-sequence { grid-template-columns: 1fr; gap: 12px; }
   .artwork-grid { columns: 2; }
   .tall .sketch, .wide .sketch, .sketch { min-height: 450px; }
@@ -311,6 +319,7 @@ footer { display: flex; justify-content: space-between; padding: 24px 3vw; backg
 }
 
 @media (max-width: 520px) {
+  .insomnia-extras-group { grid-template-columns: 1fr; gap: 64px; }
   .artwork-grid { columns: 1; }
   .sketch, .tall .sketch, .wide .sketch { min-height: 112vw; }
   .reel-item { grid-template-columns: 1fr; }
@@ -318,6 +327,7 @@ footer { display: flex; justify-content: space-between; padding: 24px 3vw; backg
   .insomnia-still,
   .insomnia-still.panorama,
   .insomnia-still.portrait,
+  .insomnia-still.poster,
   .insomnia-still.postcard { grid-column: 1 / -1; grid-row: auto; }
   .insomnia-stills { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-rows: auto; }
   .insomnia-still { display: block; }
